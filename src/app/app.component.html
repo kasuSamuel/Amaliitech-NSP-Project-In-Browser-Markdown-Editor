@@ -35,10 +35,10 @@
   <header class=" w-full h-20">
     <div class="w-full h-full flex justify-between items-center bg-[#2B2D31]">
       <div class="w- flex h-full justify-between items-center md:w-2/5 ">
-        <button class="openMenu h-full flex justify-center items-center w-20 bg-[#5A6069] hover:bg-[#E46643]">
+        <button (click)=" toggleSlideMenu()" class="openMenu h-full flex justify-center items-center w-20 bg-[#5A6069] hover:bg-[#E46643]">
           <img src="../assets/icon-menu.svg" alt="menu">
         </button>
-        <button class=" closeMenu h-full  hidden justify-center items-center w-20 bg-[#5A6069]  hover:bg-[#E46643]">
+        <button (click)=" toggleSlideMenu()" class=" closeMenu h-full  hidden justify-center items-center w-20 bg-[#5A6069]  hover:bg-[#E46643]">
           <img src="../assets/icon-close.svg" alt="close">
         </button>
         <div class="flex ml-5 w-full justify-between items-center">

@@ -37,4 +37,45 @@ export class AppComponent implements OnInit {
     this.isDark = localStorage.getItem('isDark') === 'dark';
     this.themeToggle();
   }
+
+  toggleSlideMenu() {
+    const sidebar = document.querySelector('.nav-sidebar') as HTMLElement;
+    const body = document.querySelector('body') as HTMLElement;
+    const openMenu = document.querySelector('.openMenu') as HTMLElement;
+    const closeMenu = document.querySelector('.closeMenu') as HTMLElement;
+
+    if (sidebar && body) {
+      if (sidebar.classList.contains('popUp')) {
+        // Sidebar is open, close it
+        sidebar.style.transition = 'transform 0.95s ease-in-out';
+        sidebar.style.transform = 'translateX(-100%)';
+        body.style.marginLeft = '0';
+
+        if (openMenu) {
+          openMenu.classList.remove('hidden');
+        }
+        if (closeMenu) {
+          closeMenu.style.display = 'none';
+        }
+
+        sidebar.classList.remove('popUp');
+        console.log('Sidebar closed');
+      } else {
+        // Sidebar is closed, open it
+        sidebar.style.transition = 'transform 0.9s ease-in-out';
+        sidebar.style.transform = 'translateX(0)';
+        body.style.marginLeft = '240px';
+
+        if (openMenu) {
+          openMenu.classList.add('hidden');
+        }
+        if (closeMenu) {
+          closeMenu.style.display = 'flex';
+        }
+
+        sidebar.classList.add('popUp');
+        console.log('Sidebar opened');
+      }
+    }
+  }
 }
