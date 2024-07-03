@@ -90,4 +90,13 @@ export class AppComponent implements OnInit {
 
     return `${day}-${month}-${year}`;
   }
+
+  newDocument(): void {
+    const newDoc = {
+      name: `untitled-document.md`,
+      createdAt: this.formatDate(new Date()),
+      content: '',
+    };
+    this.data.push(newDoc);
+  }
 }
