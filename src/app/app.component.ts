@@ -161,4 +161,13 @@ export class AppComponent implements OnInit {
       location.reload();
     }
   }
+
+  hidedeletepopup(show: boolean): void {
+    const hidedeletepopup = document.querySelector(
+      '.deletepopup',
+    ) as HTMLElement | null;
+    if (hidedeletepopup) {
+      hidedeletepopup.style.display = show ? 'none' : '';
+    }
+  }
 }
