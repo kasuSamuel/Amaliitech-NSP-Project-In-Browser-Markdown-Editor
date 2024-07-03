@@ -13,7 +13,7 @@
         Are you sure you want to delete the {{selectedData.name}}’
         document and its contents? This action cannot be reversed.
       </p>
-      <button 
+      <button  (click)="confirmAction()"
         class="w-80 flex  text-white mt-3 rounded-md py-3 h-11 px-5 justify-center bg-[#e7492b] items-center hover:bg-[#F39765] tracking-wide font-light">
         Confirm & Delete</button>
     </div>

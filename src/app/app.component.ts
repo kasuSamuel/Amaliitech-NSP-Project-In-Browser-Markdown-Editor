@@ -134,4 +134,31 @@ export class AppComponent implements OnInit {
       popup.style.display = 'flex';
     }
   }
+
+  confirmAction() {
+    if (this.selectedData) {
+      const index = this.data.findIndex((doc) => doc === this.selectedData);
+
+      if (index !== -1) {
+        this.data.splice(index, 1); // Remove the selected file
+
+        if (this.data.length > 0) {
+          // Update selectedData to the latest or next file
+          this.selectedData = this.data[Math.min(index, this.data.length - 1)];
+        } else {
+          this.selectedData = null;
+        }
+
+        this.dataService.saveToLocalStorage(this.data); // Save the updated data to local storage
+      }
+      // Optionally, hide the popup or perform any other UI updates
+      const popup = document.querySelector(
+        '.deletepopup',
+      ) as HTMLElement | null;
+      if (popup) {
+        popup.style.display = 'none';
+      }
+      location.reload();
+    }
+  }
 }
