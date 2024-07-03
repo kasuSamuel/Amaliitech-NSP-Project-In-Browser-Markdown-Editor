@@ -99,4 +99,28 @@ export class AppComponent implements OnInit {
     };
     this.data.push(newDoc);
   }
+
+  get reversedData() {
+    return this.data.slice().reverse();
+  }
+
+  saveChanges() {
+    if (this.selectedData) {
+      const nameInput = document.querySelector(
+        '.nameInput',
+      ) as HTMLInputElement;
+      const index = this.data.findIndex((doc) => doc === this.selectedData);
+      if (index !== -1) {
+        this.data[index].content = this.selectedData.content;
+        if (nameInput.value) {
+          this.data[index].name = this.selectedData.name = nameInput.value;
+        }
+        this.dataService.saveToLocalStorage(this.data);
+        console.log(this.data[index]);
+      }
+
+      // Reload the page
+      location.reload();
+    }
+  }
 }
