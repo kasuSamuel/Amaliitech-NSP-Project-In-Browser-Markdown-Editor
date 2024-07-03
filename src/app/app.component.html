@@ -1,5 +1,8 @@
 <div class="flex">
+  <div 
+    class="deletepopup bg-[#5A6069] bg-opacity-60 absolute w-full h-full justify-center items-center z-50 hidden">
 
+  </div>
 
   <div class="nav-sidebar w-60 transform -translate-x-full absolute left-0">
     <nav
@@ -63,7 +66,7 @@
         </div>
       </div>
       <div class="flex mr-10 w-50 justify-center items-center gap-5">
-        <button (click)="deletedItem()" >
+        <button >
           <i class="fa fa-trash-alt text-gray-400 hover:text-[#E46643]" aria-hidden="true"></i>
         </button>
         <button  (click)="saveChanges()"
