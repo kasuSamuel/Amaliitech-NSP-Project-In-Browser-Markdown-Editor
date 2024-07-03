@@ -78,4 +78,8 @@ export class AppComponent implements OnInit {
       }
     }
   }
+
+  viewDocument(document: any) {
+    this.dataService.setSelected(document);
+  }
 }
