@@ -42,7 +42,7 @@
         <div class="w-44 flex absolute h-12 bottom-0 gap-2 items-center">
           <img class="first" src="../assets/icon-dark-mode.svg" alt="">
           <img class="first-image hidden" src="../assets/icon-moon.svg" alt="">
-          <input type="checkbox" id="check">
+          <input (change)="onTheme()" type="checkbox" id="check">
           <label for="check" id="toggleBtn" class="button"></label>
           <img class="second-image hidden" src="../assets/icon-light-mode.svg" alt="">
           <img class="second " src="../assets/icon-sun.svg" alt="">
