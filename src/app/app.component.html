@@ -95,7 +95,7 @@
       <div class="div-out w-full pr-8 md:w-1/2 h-full">
         <div class="px-4 w-full h-10 flex  justify-between items-center">
           <p class="uppercase tracking-wide font-light text-[#7C8187] text-1xl">markdown</p>
-          <button class="  flex md:hidden">
+          <button (click)="togglePreview(true)" class="  flex md:hidden">
             <i class="fa-sharp fa-regular fa-eye text-gray-400  hover:text-[#E46643] " aria-hidden="true"></i></button>
         </div>
       </div>
@@ -104,11 +104,11 @@
       <div class="preview-all eye-now w-full h-full hidden md:flex md:w-1/2">
         <div class=" px-4 w-full h-10 flex  justify-between items-center ">
           <p class="uppercase tracking-wide font-light text-[#7C8187] text-1xl">Preview</p>
-          <button class="show-preview pr-7" aria-label="Show Preview">
+          <button (click)="togglePreview(true)" class="show-preview pr-7" aria-label="Show Preview">
             <i class="fa-sharp fa-regular fa-eye text-gray-400 hover:text-[#E46643]" aria-hidden="true"></i>
 
           </button>
-          <button class="hide-preview pr-7 hidden " aria-label="Hide Preview">
+          <button (click)="togglePreview(false)" class="hide-preview pr-7 hidden " aria-label="Hide Preview">
             <i class="fa-solid fa-eye-slash text-gray-400 hover:text-[#E46643]" aria-hidden="true"></i>
           </button>
         </div>

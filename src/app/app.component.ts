@@ -222,4 +222,55 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  togglePreview(show: boolean): void {
+    const showPreview = document.querySelector('.show-preview') as HTMLElement;
+    const hidePreview = document.querySelector('.hide-preview') as HTMLElement;
+    const divOut = document.querySelectorAll('.div-out');
+    const previewAll = document.querySelector('.preview-all') as HTMLElement;
+    const previewAllTwo = document.querySelector(
+      '.preview-all-two',
+    ) as HTMLElement;
+    const newPreview = document.querySelector('.new-preview') as HTMLElement;
+    const eyeNow = document.querySelector('.eye-now') as HTMLElement;
+
+    // Loop through all divOut elements and toggle the 'hidden' class
+    divOut.forEach((div) => {
+      if (div instanceof HTMLElement) {
+        if (show) {
+          div.classList.add('hidden');
+        } else {
+          div.classList.remove('hidden');
+        }
+      }
+    });
+
+    if (previewAll) {
+      previewAll.style.width = show ? '100%' : '';
+      previewAll.style.justifyContent = show ? 'center' : 'initial';
+    }
+    if (newPreview) {
+      newPreview.style.display = show ? 'flex' : '';
+      newPreview.style.width = show ? '100%' : '';
+      newPreview.style.justifyContent = show ? 'center' : 'initial';
+      newPreview.style.marginBottom = show ? '5rem' : '';
+    }
+
+    if (previewAllTwo) {
+      previewAllTwo.style.width = show ? '70%' : 'initial';
+      previewAllTwo.style.marginBottom = show ? '7rem' : '';
+    }
+
+    // Toggle 'hidden' class on showPreview and hidePreview elements
+    if (showPreview) {
+      showPreview.classList.toggle('hidden', show);
+    }
+
+    if (hidePreview) {
+      hidePreview.classList.toggle('hidden', !show);
+    }
+    if (eyeNow) {
+      eyeNow.classList.toggle('hidden', !show);
+    }
+  }
 }
