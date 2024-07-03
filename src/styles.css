@@ -1,1 +1,149 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  overflow: hidden;
+  transition: margin-left 0.9s ease-in-out;
+}
+
+
+
+.popUp {
+   transform: translateX(0);
+   transition: transform 0.9s ease-in-out;
+}
+.popUot {
+    margin-left: -250px;
+    transition: left 0.3s ease;   transition: transform 0.9s ease-in-out;
+}
+
+
+.button {
+  width: 3rem;
+  height: 1.5rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  position: relative;
+  background: #5a6069;
+  transition: 0.2s;
+}
+
+.button::before {
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 1.125rem;
+  background-color: #f1f3fa;
+  position: absolute;
+  top: 0.37rem;
+  right: 0.35rem;
+  transition: 0.2s;
+}
+
+.button::after {
+  background-color: #f1f3fa;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .button::before {
+  transform: translateX(-1.5rem);
+}
+ 
+.kas {
+  margin-left: 15rem;
+}
+
+.opacity {
+  opacity: 0.6;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.mlb {
+  margin-left: 50%;
+  margin-top: -2%;
+}
+
+.con-move-up {
+  margin-top: 0;
+}
+
+.mkd blockquote {
+  width: 98%;
+  border-left: 0.3rem solid #e46643;
+  background-color: #e4e4e4;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.mkd h6 {
+  color: #e46643;
+}
+.mkd h4,
+.mkd h5 {
+  font-size: bold;
+  color: black;
+}
+
+.dark{
+  color: white;
+  background-color: #979797;
+}
+.mkd h2 {
+  font-weight: 300;
+}
+
+.mkd li::marker {
+  color: #e46643;
+}
+
+.mkd pre {
+  background-color: #e4e4e4 !important;
+}
+
+.mkd pre code {
+  color: #151619;
+}
+.mkd a {
+  color: #e46643;
+}
+
+textarea::-webkit-scrollbar,
+.markdown::-webkit-scrollbar,
+.ulscroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.textarea,
+.preview {
+  flex: 1;
+  overflow-y: auto;
+}
+
+
+
+.prose{
+  height: 100%;
+} 
