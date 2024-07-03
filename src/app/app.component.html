@@ -1,5 +1,5 @@
-<div class="flex">
-  <div 
+<div class=" flex ">
+  <div *ngIf="selectedData"
     class="deletepopup bg-[#5A6069] bg-opacity-60 absolute w-full h-full justify-center items-center z-50 hidden">
     <div class="deletepopmenu bg-white shadow-lg rounded px-4 py-8 flex-col gap-2 ">
       <div class=" w-80 h-8 items-center flex justify-between">
@@ -13,12 +13,11 @@
         Are you sure you want to delete the {{selectedData.name}}’
         document and its contents? This action cannot be reversed.
       </p>
-      <button  (click)="confirmAction()"
+      <button (click)="confirmAction()"
         class="w-80 flex  text-white mt-3 rounded-md py-3 h-11 px-5 justify-center bg-[#e7492b] items-center hover:bg-[#F39765] tracking-wide font-light">
         Confirm & Delete</button>
     </div>
   </div>
-
   <div class="nav-sidebar w-60 transform -translate-x-full absolute left-0">
     <nav
       class=" sidebar w-60 h-100vh bg-[#1D1F22] p-4 flex-col justify-center items-center transition duration-200 ease-in-out">
@@ -29,36 +28,36 @@
           New Document</button>
 
         <ul class="ulscroll overflow-y-auto scrollbar-hidden overflow-x-auto h-60vh">
-          <li class="flex w-52 h-10 items-center mt-6">
+          <li *ngFor="let item of reversedData" class="flex w-52 h-10 items-center mt-6">
             <div>
               <img src="../assets/icon-document.svg" alt="document icon">
             </div>
             <div class="ml-4">
-              <p class="data-date text-gray-500">assdcsdcs</p>
-              <button class="text-white hover:text-[#E46643]">dasa</button>
+              <p class="data-date text-gray-500">{{ item.createdAt }}</p>
+              <button (click)="viewDocument(item)" class="text-white hover:text-[#E46643]">{{ item.name }}</button>
             </div>
           </li>
         </ul>
         <div class="w-44 flex absolute h-12 bottom-0 gap-2 items-center">
           <img class="first" src="../assets/icon-dark-mode.svg" alt="">
           <img class="first-image hidden" src="../assets/icon-moon.svg" alt="">
-          <input (change)="onTheme()" type="checkbox" id="check">
+          <input (change)="onTheme()" type="checkbox" id="check" [(ngModel)]="isDark">
           <label for="check" id="toggleBtn" class="button"></label>
           <img class="second-image hidden" src="../assets/icon-light-mode.svg" alt="">
           <img class="second " src="../assets/icon-sun.svg" alt="">
         </div>
-
       </div>
     </nav>
   </div>
-
   <header class=" w-full h-20">
     <div class="w-full h-full flex justify-between items-center bg-[#2B2D31]">
       <div class="w- flex h-full justify-between items-center md:w-2/5 ">
-        <button (click)=" toggleSlideMenu()" class="openMenu h-full flex justify-center items-center w-20 bg-[#5A6069] hover:bg-[#E46643]">
+        <button (click)=" toggleSlideMenu()"
+          class="openMenu h-full flex justify-center items-center w-20 bg-[#5A6069] hover:bg-[#E46643]">
           <img src="../assets/icon-menu.svg" alt="menu">
         </button>
-        <button (click)=" toggleSlideMenu()" class=" closeMenu h-full  hidden justify-center items-center w-20 bg-[#5A6069]  hover:bg-[#E46643]">
+        <button (click)=" toggleSlideMenu()"
+          class=" closeMenu h-full  hidden justify-center items-center w-20 bg-[#5A6069]  hover:bg-[#E46643]">
           <img src="../assets/icon-close.svg" alt="close">
         </button>
         <div class="flex ml-5 w-full justify-between items-center">
@@ -70,21 +69,21 @@
 
           <div class="flex items-center ml-3 justify-between">
             <img class="w-6 h-6" src="../assets/icon-document.svg" alt="document icon">
-            <div class="flex-col w-full items-center justify-center ml-5">
+            <div class="flex-col w-full items-center justify-center ml-5" *ngIf="selectedData">
               <p class="hidden text-gray-500 tracking-wide font-light md:flex">Document Name</p>
               <input
                 class="nameInput w-4/5 md:w-full text-sm md:text-2xl outline-none bg-transparent placeholder-white pl-1 mt-2 text-gray-100 caret-[#E46643] border-b-2 border-transparent focus:border-white"
-                placeholder="j">
+                placeholder="{{selectedData.name}}">
             </div>
 
           </div>
         </div>
       </div>
       <div class="flex mr-10 w-50 justify-center items-center gap-5">
-        <button >
+        <button (click)="deletedItem()">
           <i class="fa fa-trash-alt text-gray-400 hover:text-[#E46643]" aria-hidden="true"></i>
         </button>
-        <button  (click)="saveChanges()"
+        <button (click)="saveChanges()"
           class="flex bg-[#e7492b] text-white rounded-md py-3 h-11 px-5 justify-center items-center gap-2 hover:bg-[#F39765] tracking-wide font-light">
           <img class="w-12 h-5 md:w-auto md:h-auto" src="../assets/icon-save.svg" alt="save">
           <div class="hidden md:flex">Save Changes</div>
@@ -111,24 +110,24 @@
           <button (click)="togglePreview(false)" class="hide-preview pr-7 hidden " aria-label="Hide Preview">
             <i class="fa-solid fa-eye-slash text-gray-400 hover:text-[#E46643]" aria-hidden="true"></i>
           </button>
+
         </div>
       </div>
     </section>
   </header>
 </div>
-
 <main class=" w-full h-90vh fixed top-28 ">
   <div class="w-full h-full flex justify-between ">
-    <div class="w-full div-out h-full px-4 py-4 md:w-1/2" >
-      <textarea 
+    <div class="w-full div-out h-full px-4 py-4 md:w-1/2" *ngIf="selectedData">
+      <textarea [(ngModel)]="selectedData.content"
         class="dark:text-gray-400 textarea w-full h-full bg-transparent outline-none text-[#151619] pb-14 text-sm resize-none font-roboto-mono text-custom-14 leading-custom-24 "
         placeholder="Start typing your markdown..."></textarea>
     </div>
-    <div  class="div-out border-r h-full border-[#979797] hidden md:flex"></div>
+    <div class="div-out border-r h-full border-[#979797] hidden md:flex"></div>
     <div class=" preview-all new-preview markdown textarea w-1/2 h-100vh mkd px-4  py-4 hidden  md:flex"
-       style="overflow-y: auto; margin-bottom: 5rem;">
+      *ngIf="selectedData" style="overflow-y: auto; margin-bottom: 5rem;">
       <markdown class=" ulscroll preview-all-two prose text-[#7C8187] font-sans w-full h-full mb-28 overflow-y-auto"
-        ></markdown>
+        [data]="selectedData.content"></markdown>
     </div>
   </div>
 </main>
