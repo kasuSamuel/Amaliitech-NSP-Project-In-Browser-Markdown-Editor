@@ -24,5 +24,10 @@ export class DataService {
     }
   }
 
+  private isSelected = new BehaviorSubject<any>(null);
+  isSelected$ = this.isSelected.asObservable();
 
+  setSelected(data: any) {
+    this.isSelected.next(data);
+  }
 }
