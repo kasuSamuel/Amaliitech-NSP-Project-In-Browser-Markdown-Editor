@@ -123,4 +123,8 @@ export class AppComponent implements OnInit {
       location.reload();
     }
   }
+
+  lastData() {
+    this.selectedData = this.data[this.data.length - 1];
+  }
 }
