@@ -15,5 +15,14 @@ export class DataService {
     localStorage.setItem(this.localStorageKey, JSON.stringify(document));
   }
 
+  fetchData(): Observable<any[]> {
+    const localData = localStorage.getItem(this.localStorageKey);
+    if (localData) {
+      return of(JSON.parse(localData));
+    } else {
+      return this.http.get<any[]>(this.jsonUrl);
+    }
+  }
+
 
 }
