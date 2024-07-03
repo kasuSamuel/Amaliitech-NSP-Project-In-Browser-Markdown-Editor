@@ -127,4 +127,11 @@ export class AppComponent implements OnInit {
   lastData() {
     this.selectedData = this.data[this.data.length - 1];
   }
+
+  deletedItem() {
+    const popup = document.querySelector('.deletepopup') as HTMLElement | null;
+    if (popup) {
+      popup.style.display = 'flex';
+    }
+  }
 }
