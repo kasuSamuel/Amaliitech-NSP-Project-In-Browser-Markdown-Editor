@@ -1,4 +1,4 @@
-<div class=" flex ">
+<div class=" flex">
   <div *ngIf="selectedData"
     class="deletepopup bg-[#5A6069] bg-opacity-60 absolute w-full h-full justify-center items-center z-50 hidden">
     <div class="deletepopmenu bg-white shadow-lg rounded px-4 py-8 flex-col gap-2 ">
@@ -120,7 +120,7 @@
   <div class="w-full h-full flex justify-between ">
     <div class="w-full div-out h-full px-4 py-4 md:w-1/2" *ngIf="selectedData">
       <textarea [(ngModel)]="selectedData.content"
-        class="dark:text-gray-400 textarea w-full h-full bg-transparent outline-none text-[#151619] pb-14 text-sm resize-none font-roboto-mono text-custom-14 leading-custom-24 "
+        class="dark:text-gray-400 textarea w-full h-full bg-transparent outline-none text-[#151619] pb-14 text-sm resize-none font-roboto-mono text-custom-14 leading-custom-24 lg:w-[750px] "
         placeholder="Start typing your markdown..."></textarea>
     </div>
     <div class="div-out border-r h-full border-[#979797] hidden md:flex"></div>
