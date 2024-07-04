@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -22,13 +22,12 @@ body {
 }
 
 .popUp {
-  transform: translateX(0);
-  transition: transform 0.9s ease-in-out;
+   transform: translateX(0);
+   transition: transform 0.9s ease-in-out;
 }
 .popUot {
-  margin-left: -250px;
-  transition: left 0.9s ease;
-  transition: transform 0.9s ease-in-out;
+    margin-left: -250px;
+    transition: left 0.3s ease;   transition: transform 0.9s ease-in-out;
 }
 
 .button {
@@ -38,7 +37,7 @@ body {
   border-radius: 0.75rem;
   position: relative;
   background: #5a6069;
-  transition: 0.9s ease-in-out;
+  transition: 0.2s;
 }
 
 .button::before {
@@ -50,7 +49,7 @@ body {
   position: absolute;
   top: 0.37rem;
   right: 0.35rem;
-  transition: 0.9s ease-in-out;
+  transition: 0.2s;
 }
 
 .button::after {
@@ -63,9 +62,8 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked + .button::before {
   transform: translateX(-1.5rem);
-  transition: 0.5s ease-in-out;
 }
-
+ 
 .kas {
   margin-left: 15rem;
 }
@@ -88,7 +86,7 @@ input[type="checkbox"]:checked + .button::before {
 }
 
 .mkd blockquote {
-  width: 98%;
+  width: 100%;
   border-left: 0.3rem solid #e46643;
   background-color: #e4e4e4;
   padding: 0.5rem;
@@ -104,7 +102,7 @@ input[type="checkbox"]:checked + .button::before {
   color: black;
 }
 
-.dark {
+.dark{
   color: white;
   background-color: #979797;
 }
@@ -139,67 +137,59 @@ textarea::-webkit-scrollbar,
   overflow-y: auto;
 }
 
-.prose {
+.prose{
   height: 100%;
-}
+} 
 
 .dark-mode {
   background-color: #151619;
-  transition: 0.9s ease-in-out;
+  /* transition : transform 0.9s ease-in-out, */
+  transition: 0.s ease-in-out;
 }
 
 .dark-mode section {
-  background-color: #1d1f22;
-  transition: 0.9s ease-in-out;
+  background-color: #1D1F22;
 }
 
 .dark-mode .deletepopmenu {
   background-color: black;
-  transition: 0.9s ease-in-out;
 }
 
 .dark-mode textarea {
-  color: #7c8187;
-  transition: 0.9s ease-in-out;
+  color: #7C8187;
 }
 
 body.dark-mode {
   background-color: #151619;
-  transition: 0.9s ease-in-out;
+
 }
 
 body.dark-mode section {
-  background-color: #1d1f22;
-  transition: 0.9s ease-in-out;
+  background-color: #1D1F22;
 }
 
 body.dark-mode .deletepopmenu {
   background-color: black;
-  transition: 0.9s ease-in-out;
 }
 
 body.dark-mode textarea {
-  color: #7c8187;
+  color: #7C8187;
 }
 
 body.dark-mode .first {
   display: none;
-  transition: 0.9s ease-in-out;
 }
 
 body.dark-mode .first-image {
   display: flex;
-  transition: 0.9s ease-in-out;
 }
 
 body.dark-mode .second {
   display: none;
-  transition: 0.9s ease-in-out;
 }
 
 body.dark-mode .second-image {
   display: flex;
-  transition: 0.9s ease-in-out;
 }
 
 body.dark-mode .mkd h1,
@@ -211,11 +201,9 @@ body.dark-mode .ddd,
 body.dark-mode .mkd pre code,
 body.dark-mode .mkd blockquote {
   color: white;
-  transition: 0.9s ease-in-out;
 }
 
 body.dark-mode .mkd pre,
 body.dark-mode .mkd blockquote {
-  background-color: #5a6069 !important;
-  transition: 0.9s ease-in-out;
+  background-color: #5A6069 !important;
 }
