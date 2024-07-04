@@ -34,7 +34,8 @@ export class AppComponent implements OnInit {
       this.lastData();
     }
 
-    this.isDark = localStorage.getItem('isDark') === 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    this.isDark = savedTheme === 'dark';
     this.themeToggle();
   }
 
@@ -118,7 +119,6 @@ export class AppComponent implements OnInit {
         this.dataService.saveToLocalStorage(this.data);
         console.log(this.data[index]);
       }
-
       // Reload the page
       location.reload();
     }
@@ -163,64 +163,21 @@ export class AppComponent implements OnInit {
   }
 
   hidedeletepopup(show: boolean): void {
-    const hidedeletepopup = document.querySelector(
-      '.deletepopup',
-    ) as HTMLElement | null;
+    const hidedeletepopup = document.querySelector('.deletepopup',) as HTMLElement | null;
     if (hidedeletepopup) {
       hidedeletepopup.style.display = show ? 'none' : '';
     }
   }
 
-  onTheme() {
-    this.isDark = !this.isDark;
+  onTheme(event: any) {
+    this.isDark = event.target.checked;
+    const theme = this.isDark ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
     this.themeToggle();
-    localStorage.setItem('isDark', this.isDark ? 'dark' : 'light');
-    console.log(this.isDark);
   }
 
-  themeToggle() {
-    document.body.style.backgroundColor = this.isDark ? '#151619' : '';
-
-    const section = document.querySelector('section') as HTMLElement;
-    section.style.backgroundColor = this.isDark ? '#1D1F22' : '';
-
-    const deletePopMenu = document.querySelector(
-      '.deletepopmenu',
-    ) as HTMLElement;
-    deletePopMenu.style.backgroundColor = this.isDark ? 'black' : '';
-
-    const textarea = document.querySelector('textarea') as HTMLTextAreaElement;
-    textarea.style.color = this.isDark ? '#7C8187' : '';
-
-    const first = document.querySelector('.first') as HTMLElement;
-    first.style.display = this.isDark ? 'none' : 'flex';
-
-    const firstImage = document.querySelector('.first-image') as HTMLElement;
-    firstImage.style.display = this.isDark ? 'flex' : 'none';
-
-    const second = document.querySelector('.second') as HTMLElement;
-    second.style.display = this.isDark ? 'none' : 'flex';
-
-    const secondImage = document.querySelector('.second-image') as HTMLElement;
-    secondImage.style.display = this.isDark ? 'flex' : 'none';
-
-    const mkd = document.querySelectorAll(
-      '.mkd h1, .mkd h2, .mkd h3, .mkd h4 , .mkd h5 ,.ddd, .mkd pre code, .mkd blockquote',
-    ) as NodeListOf<HTMLElement>;
-    mkd.forEach((element) => {
-      element.style.color = this.isDark ? 'white' : '';
-    });
-
-    const mkdBg = document.querySelectorAll(
-      '.mkd pre, .mkd blockquote',
-    ) as NodeListOf<HTMLElement>;
-    mkdBg.forEach((element) => {
-      if (this.isDark) {
-        element.style.setProperty('background-color', '#5A6069', 'important');
-      } else {
-        element.style.removeProperty('background-color');
-      }
-    });
+  themeToggle() {  
+  document.body.classList.toggle('dark-mode', this.isDark);
   }
 
   togglePreview(show: boolean): void {
