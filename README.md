@@ -37,6 +37,9 @@ Users should be able to:
 ![](./src/assets/Screenshot-1.png)
 ![](./src/assets/Screenshot-2.png)
 ![](./src/assets/Screenshot-3.png)
+![](./src/assets/Screenshot-4.png)
+![](./src/assets/Screenshot-5.png)
+![](./src/assets/Screenshot-6.png)
 
 
 
