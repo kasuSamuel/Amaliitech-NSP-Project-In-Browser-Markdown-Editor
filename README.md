@@ -13,12 +13,9 @@ This is a solution to the [In-browser markdown editor challenge on Frontend Ment
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
-  - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+
 
 ## Overview
 
@@ -37,85 +34,71 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./src/assets/Screenshot-1.png)
+![](./src/assets/Screenshot-2.png)
+![](./src/assets/Screenshot-3.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/kasuSamuel/Amaliitech-NSP-Project-In-Browser-Markdown-Editor)
+- Live Site URL: [Add live site URL here](https://amaliitech-nsp-project-in-browser-markdown-editor.vercel.app/)
 
 ## My process
+
+- Set Up Angular Project: Install Angular CLI, create a new project.
+- Install Packages: Install ngx-markdown for markdown support and marked for parsing.
+- Configure ngx-markdown: Add MarkdownModule to your app module.
+- Create Component: Generate a markdown editor component with a textarea and preview div.
+- Style Component: Use CSS to style the editor and preview sections.
+- Bind Data: Implement two-way data binding and preview updating in the component logic.
+- Run Application: Serve the application to see the markdown editor in action.
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Tailwind Css
+- [Angular](https://angular.org/)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Angular Basics: Setting up and configuring an Angular project, including creating and managing components.
+- Third-Party Libraries: Installing, configuring, and using third-party libraries like ngx-markdown and marked to extend your       application's functionality.
+- Data Binding: Implementing two-way data binding to synchronize user input and the live preview.
+- HTTP Client: Using Angular's HttpClientModule for potential backend integration, such as saving and loading markdown files.
+- Component Interaction: Structuring components and managing their interactions within the application.
+- Styling: Applying styles using CSS and potentially integrating with Tailwind CSS or other styling frameworks.
+- Markdown Parsing and Rendering: Understanding markdown syntax and how to parse and render it dynamically within an Angular      application.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+1. Official Documentation
+   
+ - Angular Documentation: Angular Official Docs
+   Comprehensive guide to Angular's features and best practices.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+  - ngx-markdown Documentation: ngx-markdown GitHub
+    Detailed instructions on how to install, configure, and use ngx-markdown.
 
-## Author
+2. Tutorials and Guides
+Angular Tutorials:
+Angular Tutorial: Tour of Heroes: A step-by-step guide for learning Angular basics.
+Building a Markdown Editor with Angular (third-party tutorial).
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+3. Third-Party Libraries
+Marked Documentation: Marked Documentation
+Guide to using the marked library for parsing markdown.
+Tailwind CSS Documentation: Tailwind CSS Docs
+Information on setting up and using Tailwind CSS for styling your application.
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+4. General Development
+Stack Overflow: Angular Questions on Stack Overflow
+Community-driven Q&A platform for troubleshooting and advice.
+GitHub Repositories:
+Angular Examples: Official Angular examples repository.
+Awesome Angular: A curated list of awesome Angular resources and projects.
