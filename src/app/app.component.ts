@@ -107,9 +107,7 @@ export class AppComponent implements OnInit {
 
   saveChanges() {
     if (this.selectedData) {
-      const nameInput = document.querySelector(
-        '.nameInput',
-      ) as HTMLInputElement;
+      const nameInput = document.querySelector('.nameInput') as HTMLInputElement;
       const index = this.data.findIndex((doc) => doc === this.selectedData);
       if (index !== -1) {
         this.data[index].content = this.selectedData.content;
@@ -148,13 +146,11 @@ export class AppComponent implements OnInit {
         } else {
           this.selectedData = null;
         }
-
-        this.dataService.saveToLocalStorage(this.data); // Save the updated data to local storage
+        // Save the updated data to local storage
+        this.dataService.saveToLocalStorage(this.data);
       }
       // Optionally, hide the popup or perform any other UI updates
-      const popup = document.querySelector(
-        '.deletepopup',
-      ) as HTMLElement | null;
+      const popup = document.querySelector(  '.deletepopup') as HTMLElement | null;
       if (popup) {
         popup.style.display = 'none';
       }
@@ -163,7 +159,7 @@ export class AppComponent implements OnInit {
   }
 
   hidedeletepopup(show: boolean): void {
-    const hidedeletepopup = document.querySelector('.deletepopup',) as HTMLElement | null;
+    const hidedeletepopup = document.querySelector('.deletepopup') as HTMLElement | null;
     if (hidedeletepopup) {
       hidedeletepopup.style.display = show ? 'none' : '';
     }
@@ -185,9 +181,7 @@ export class AppComponent implements OnInit {
     const hidePreview = document.querySelector('.hide-preview') as HTMLElement;
     const divOut = document.querySelectorAll('.div-out');
     const previewAll = document.querySelector('.preview-all') as HTMLElement;
-    const previewAllTwo = document.querySelector(
-      '.preview-all-two',
-    ) as HTMLElement;
+    const previewAllTwo = document.querySelector('.preview-all-two') as HTMLElement;
     const newPreview = document.querySelector('.new-preview') as HTMLElement;
     const eyeNow = document.querySelector('.eye-now') as HTMLElement;
 
