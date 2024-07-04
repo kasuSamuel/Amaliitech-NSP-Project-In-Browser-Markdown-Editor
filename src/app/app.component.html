@@ -18,7 +18,7 @@
         Confirm & Delete</button>
     </div>
   </div>
-  <div class="nav-sidebar w-60 transform -translate-x-full absolute left-0">
+  <div class="nav-sidebar w-60 fixed left-0 -z-50">
     <nav
       class=" sidebar w-60 h-100vh bg-[#1D1F22] p-4 flex-col justify-center items-center transition duration-200 ease-in-out">
       <p class="uppercase mt-2 text-gray-500">my documents</p>
@@ -116,11 +116,11 @@
     </section>
   </header>
 </div>
-<main class=" w-full h-90vh fixed top-28 ">
+<main class=" w-full h-90vh fixed top-28 bg-white ">
   <div class="w-full h-full flex justify-between ">
     <div class="w-full div-out h-full px-4 py-4 md:w-1/2" *ngIf="selectedData">
       <textarea [(ngModel)]="selectedData.content"
-        class="dark:text-gray-400 textarea w-full h-full bg-transparent outline-none text-[#151619] pb-14 text-sm resize-none font-roboto-mono text-custom-14 leading-custom-24 lg:w-[750px] "
+        class="dark:text-gray-400 textarea w-full h-full bg-transparent outline-none text-[#151619] pb-14 text-sm resize-none font-roboto-mono text-custom-14 leading-custom-24 "
         placeholder="Start typing your markdown..."></textarea>
     </div>
     <div class="div-out border-r h-full border-[#979797] hidden md:flex"></div>

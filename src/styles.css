@@ -15,10 +15,12 @@
 body {
   width: 100%;
   height: 100vh;
+  
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   overflow: hidden;
   transition: margin-left 0.9s ease-in-out;
+  z-index: 5;
 }
 
 .popUp {
@@ -143,7 +145,6 @@ textarea::-webkit-scrollbar,
 
 .dark-mode {
   background-color: #151619;
-  /* transition : transform 0.9s ease-in-out, */
   transition: 0.s ease-in-out;
 }
 
@@ -166,6 +167,9 @@ body.dark-mode {
 
 body.dark-mode section {
   background-color: #1D1F22;
+}
+body.dark-mode main {
+  background-color: #151619;
 }
 
 body.dark-mode .deletepopmenu {

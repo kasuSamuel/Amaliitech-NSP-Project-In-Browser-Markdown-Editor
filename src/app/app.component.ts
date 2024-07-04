@@ -40,16 +40,14 @@ export class AppComponent implements OnInit {
   }
 
   toggleSlideMenu() {
-    const sidebar = document.querySelector('.nav-sidebar') as HTMLElement;
     const body = document.querySelector('body') as HTMLElement;
     const openMenu = document.querySelector('.openMenu') as HTMLElement;
     const closeMenu = document.querySelector('.closeMenu') as HTMLElement;
 
-    if (sidebar && body) {
-      if (sidebar.classList.contains('popUp')) {
-        // Sidebar is open, close it
-        sidebar.style.transition = 'transform 0.95s ease-in-out';
-        sidebar.style.transform = 'translateX(-100%)';
+    if (body) {
+      if (body.classList.contains('menu-open')) {
+        // Menu is open, close it
+        body.style.transition = 'margin-left 0.3s ease-in-out';
         body.style.marginLeft = '0';
 
         if (openMenu) {
@@ -59,12 +57,11 @@ export class AppComponent implements OnInit {
           closeMenu.style.display = 'none';
         }
 
-        sidebar.classList.remove('popUp');
-        console.log('Sidebar closed');
+        body.classList.remove('menu-open');
+        console.log('Menu closed');
       } else {
-        // Sidebar is closed, open it
-        sidebar.style.transition = 'transform 0.9s ease-in-out';
-        sidebar.style.transform = 'translateX(0)';
+        // Menu is closed, open it
+        body.style.transition = 'margin-left 0.3s ease-in-out';
         body.style.marginLeft = '240px';
 
         if (openMenu) {
@@ -74,8 +71,8 @@ export class AppComponent implements OnInit {
           closeMenu.style.display = 'flex';
         }
 
-        sidebar.classList.add('popUp');
-        console.log('Sidebar opened');
+        body.classList.add('menu-open');
+        console.log('Menu opened');
       }
     }
   }
@@ -107,7 +104,9 @@ export class AppComponent implements OnInit {
 
   saveChanges() {
     if (this.selectedData) {
-      const nameInput = document.querySelector('.nameInput') as HTMLInputElement;
+      const nameInput = document.querySelector(
+        '.nameInput',
+      ) as HTMLInputElement;
       const index = this.data.findIndex((doc) => doc === this.selectedData);
       if (index !== -1) {
         this.data[index].content = this.selectedData.content;
@@ -150,7 +149,9 @@ export class AppComponent implements OnInit {
         this.dataService.saveToLocalStorage(this.data);
       }
       // Optionally, hide the popup or perform any other UI updates
-      const popup = document.querySelector(  '.deletepopup') as HTMLElement | null;
+      const popup = document.querySelector(
+        '.deletepopup',
+      ) as HTMLElement | null;
       if (popup) {
         popup.style.display = 'none';
       }
@@ -159,7 +160,9 @@ export class AppComponent implements OnInit {
   }
 
   hidedeletepopup(show: boolean): void {
-    const hidedeletepopup = document.querySelector('.deletepopup') as HTMLElement | null;
+    const hidedeletepopup = document.querySelector(
+      '.deletepopup',
+    ) as HTMLElement | null;
     if (hidedeletepopup) {
       hidedeletepopup.style.display = show ? 'none' : '';
     }
@@ -172,8 +175,8 @@ export class AppComponent implements OnInit {
     this.themeToggle();
   }
 
-  themeToggle() {  
-  document.body.classList.toggle('dark-mode', this.isDark);
+  themeToggle() {
+    document.body.classList.toggle('dark-mode', this.isDark);
   }
 
   togglePreview(show: boolean): void {
@@ -181,7 +184,9 @@ export class AppComponent implements OnInit {
     const hidePreview = document.querySelector('.hide-preview') as HTMLElement;
     const divOut = document.querySelectorAll('.div-out');
     const previewAll = document.querySelector('.preview-all') as HTMLElement;
-    const previewAllTwo = document.querySelector('.preview-all-two') as HTMLElement;
+    const previewAllTwo = document.querySelector(
+      '.preview-all-two',
+    ) as HTMLElement;
     const newPreview = document.querySelector('.new-preview') as HTMLElement;
     const eyeNow = document.querySelector('.eye-now') as HTMLElement;
 
